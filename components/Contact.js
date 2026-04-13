@@ -11,9 +11,15 @@ export default function Contact() {
           <form action="https://formsubmit.co/fabianotederiche@gmail.com" method="POST" className="space-y-4">
             {/* Configure para não pedir confirmação por email */}
             <input type="hidden" name="_captcha" value="false" />
-            <input type="hidden" name="_next" value="https://seudominio.vercel.app/obrigado" />
+            
+            {/* CORRIGIDO: use o domínio real do seu site */}
+            <input type="hidden" name="_next" value="https://analise-de-dados-consultoria.vercel.app/obrigado" />
+            
             <input type="hidden" name="_subject" value="Novo contato do Site de Análise de Dados!" />
             <input type="hidden" name="_template" value="table" />
+            
+            {/* Opcional: desabilita o email de confirmação automática */}
+            <input type="hidden" name="_autoresponse" value="Obrigado pelo contato! Responderei em até 2 horas." />
             
             <div className="grid md:grid-cols-2 gap-4">
               <input 
@@ -48,7 +54,6 @@ export default function Contact() {
               className="w-full bg-gray-900 border border-gray-700 rounded-lg p-3 text-white focus:border-blue-500 outline-none"
             ></textarea>
             
-            {/* BOTÃO DE ENVIO - CORRIGIDO */}
             <button 
               type="submit" 
               className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
@@ -63,5 +68,5 @@ export default function Contact() {
         </div>
       </div>
     </section>
-  )
+  );
 }
