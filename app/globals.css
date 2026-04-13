@@ -24,3 +24,91 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* CORRIGIDO para Tailwind v4 */
+@utility btn-primary {
+  background-image: linear-gradient(to right, var(--color-blue-600), var(--color-purple-600));
+  color: white;
+  font-weight: 600;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  border-radius: 0.5rem;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+  transform: scale(1);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.btn-primary:hover {
+  background-image: linear-gradient(to right, var(--color-blue-700), var(--color-purple-700));
+  transform: scale(1.05);
+}
+
+/* Utility para container */
+@utility container-custom {
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .container-custom {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-custom {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* Utility para card */
+@utility card {
+  background-color: rgba(31, 41, 55, 0.5);
+  backdrop-filter: blur(8px);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  border: 1px solid rgba(55, 65, 81, 1);
+  transition-property: all;
+  transition-duration: 300ms;
+}
+
+.card:hover {
+  border-color: var(--color-blue-500);
+}
+
+/* Efeito de hover nos cards */
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Badge de popular */
+.badge-popular {
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+}
+
+@keyframes bounce-slow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 2s ease-in-out infinite;
+}
